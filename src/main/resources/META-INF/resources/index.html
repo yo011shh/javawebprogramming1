@@ -3,15 +3,388 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quarkus Hello World</title>
+    <title>LOL 메인화면</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #0a0e17;
+        color: #fff;
+      }
+
+      .accent-purple {
+        color: #a020f0;
+      }
+
+      .card {
+        background-color: #1e1e1e;
+        color: white;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(160, 32, 240, 0.5);
+      }
+
+      .card-img-top {
+        height: 300px;
+        object-fit: contain;
+        background-color: #000;
+      }
+
+      .btn-primary {
+        background-color: #a020f0;
+        border: none;
+      }
+    </style>
   </head>
+
   <body>
-    <div class="container">
-      <h1>Hello, Quarkus! 본문 내용</h1>
-      <p>
-        이 파일은 <code>META-INF/resources/index.html</code>에서 실행 중입니다.
-        정말 일까요?
+    <!-- 네비바 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="http://localhost:8080/">
+          League of Legends
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:8080/">홈</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="main_page_sub/news.html">뉴스</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="main_page_sub/champion.html">챔피언</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="main_page_sub/download.html"
+                >다운로드</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="login/login.html">로그인</a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://www.leagueoflegends.com/ko-kr/"
+                target="_blank"
+              >
+                공식웹사이트
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                더보기
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.leagueoflegends.com/ko-kr/champions/"
+                    target="_blank"
+                  >
+                    챔피언 목록
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://www.leagueoflegends.com/ko-kr/news/"
+                    target="_blank"
+                  >
+                    롤 뉴스
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://signup.kr.riotgames.com/ko"
+                    target="_blank"
+                  >
+                    회원가입
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 메인 영역 -->
+    <div class="container my-5">
+      <h1 class="text-center accent-purple">League of Legends</h1>
+
+      <p class="text-center">
+        적의 넥서스를 파괴하세요! 5v5 MOBA 전투에서 팀과 함께 승리하세요.
       </p>
+
+      <h2 class="text-center accent-purple my-4">챔피언 선택</h2>
+
+      <!-- 챔피언 카드 영역 -->
+      <div class="row row-cols-auto g-4 justify-content-center">
+        <!-- Aatrox -->
+        <div class="col">
+          <div
+            class="card bg-dark text-white border-secondary h-100"
+            style="width: 18rem"
+          >
+            <img src="images/Aatrox.png" class="card-img-top" alt="아트록스" />
+
+            <div class="card-body">
+              <h5 class="card-title">아트록스 (Aatrox)</h5>
+              <p class="card-text small">역할: 전사 / 난이도: 상</p>
+            </div>
+
+            <div class="card-footer bg-transparent border-0">
+              <button
+                class="btn btn-outline-light w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#modalAatrox"
+              >
+                상세 보기
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ahri -->
+        <div class="col">
+          <div
+            class="card bg-dark text-white border-secondary h-100"
+            style="width: 18rem"
+          >
+            <img src="images/Ahri.png" class="card-img-top" alt="아리" />
+
+            <div class="card-body">
+              <h5 class="card-title">아리 (Ahri)</h5>
+              <p class="card-text small">역할: 마법사 / 난이도: 중</p>
+            </div>
+
+            <div class="card-footer bg-transparent border-0">
+              <button
+                class="btn btn-outline-light w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#modalAhri"
+              >
+                상세 보기
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zed -->
+        <div class="col">
+          <div
+            class="card bg-dark text-white border-secondary h-100"
+            style="width: 18rem"
+          >
+            <img src="images/Zed.png" class="card-img-top" alt="제드" />
+
+            <div class="card-body">
+              <h5 class="card-title">제드 (Zed)</h5>
+              <p class="card-text small">역할: 암살자 / 난이도: 상</p>
+            </div>
+
+            <div class="card-footer bg-transparent border-0">
+              <button
+                class="btn btn-outline-light w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#modalZed"
+              >
+                상세 보기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- 최신 뉴스 -->
+    <div class="container mt-5 mb-5">
+      <h2 class="text-center accent-purple">최신 뉴스</h2>
+
+      <div class="card mt-3">
+        <div class="card-body">
+          <h3>새로운 챔피언 출시</h3>
+          <p>2026 루나 레벨 이벤트!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aatrox 모달 -->
+    <div
+      class="modal fade"
+      id="modalAatrox"
+      tabindex="-1"
+      aria-labelledby="modalAatroxLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content bg-dark text-white border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="modalAatroxLabel">
+              아트록스 (Aatrox) 상세 정보
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body p-0" style="height: 65vh; background: #0a0e17">
+            <iframe
+              src="modals/Aatrox.html"
+              frameborder="0"
+              style="width: 100%; height: 100%; border: none"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="modal-footer border-secondary">
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              data-bs-dismiss="modal"
+            >
+              닫기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ahri 모달 -->
+    <div
+      class="modal fade"
+      id="modalAhri"
+      tabindex="-1"
+      aria-labelledby="modalAhriLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content bg-dark text-white border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="modalAhriLabel">
+              아리 (Ahri) 상세 정보
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body p-0" style="height: 65vh; background: #0a0e17">
+            <iframe
+              src="modals/Ahri.html"
+              frameborder="0"
+              style="width: 100%; height: 100%; border: none"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="modal-footer border-secondary">
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              data-bs-dismiss="modal"
+            >
+              닫기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Zed 모달 -->
+    <div
+      class="modal fade"
+      id="modalZed"
+      tabindex="-1"
+      aria-labelledby="modalZedLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content bg-dark text-white border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="modalZedLabel">제드 (Zed) 상세 정보</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body p-0" style="height: 65vh; background: #0a0e17">
+            <iframe
+              src="modals/Zed.html"
+              frameborder="0"
+              style="width: 100%; height: 100%; border: none"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="modal-footer border-secondary">
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              data-bs-dismiss="modal"
+            >
+              닫기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
